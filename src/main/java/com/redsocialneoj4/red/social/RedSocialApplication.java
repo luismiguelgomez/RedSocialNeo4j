@@ -22,8 +22,14 @@ public class RedSocialApplication {
 		String user = "";
 		String password = "";
 		try (AppTest app = new AppTest(uri, user, password, Config.defaultConfig())) {
-			app.createSeller("Alice", "1020304050");
-			app.findPerson("Alice");
+			app.createFriendship("Brian","Luis", "Toyota TXL");
+			app.crearComprador("FREDY", "Toyota TXL");
+			app.findPerson("Maria");
+			app.crearVendedor("Maria");
+			app.crearRelacionEntreVendedorComprador
+					("Luis","Maria", "Toyota TXL", "camionetas");
+			app.crearRelacionEntreCompradorProducto("Luis","Toyota TXL");
+
 		}
 		SpringApplication.run(RedSocialApplication.class, args);
 	}
